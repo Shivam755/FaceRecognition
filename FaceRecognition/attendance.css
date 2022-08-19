@@ -71,7 +71,7 @@ header {
     transform: translate3d(85px, 0, 0);
   }
 }
-<<<<<<< HEAD
+
 *{
     margin:0;
     padding:0;
@@ -125,7 +125,6 @@ header {
   .phone_frame p{
     font-size: 1.15rem;
   }
-=======
 
 * {
   margin: 0;
@@ -186,4 +185,3 @@ body {
 .phone_frame p {
   font-size: 1.15rem;
 }
->>>>>>> 46390c56d2a75d6af436c487990a7a02444f96e7
