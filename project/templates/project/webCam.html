@@ -1,0 +1,54 @@
+{% extends "project/layout.html" %} {% block body%}
+{% if message %}
+  {% if success%}
+    <div class="success">{{message}}</div>
+  {% else %}
+    <div class="error">{{message}}</div>
+  {% endif %}
+{% endif %}
+{%if not success%}
+<div class="cam-container">
+  <video
+    controls="true"
+    autoplay="true"
+    id="videoElement"
+    width="682"
+    height="512"
+  ></video
+  ><br />
+  <button onclick="capture()" class="button button2">Click Photo</button>
+  <canvas id="canvas" width="682" height="512"></canvas>
+
+  <form id="vehicle" style="display:none;" action={% url "detect" %} method="POST">
+    {% csrf_token %}
+    <input id="img" name="img" type='hidden' />
+  </form>
+</div>
+
+<script>
+  var video = document.querySelector("#videoElement");
+  let canvas = document.querySelector("#canvas");
+
+  if (navigator.mediaDevices.getUserMedia) {
+    navigator.mediaDevices
+      .getUserMedia({ video: true })
+      .then(function (stream) {
+        video.srcObject = stream;
+        console.log(stream);
+      })
+      .catch(function (err0r) {
+        console.log("Something went wrong!\n" + err0r);
+      });
+  }
+
+  function capture() {
+    canvas.getContext("2d").drawImage(video, 0, 0, canvas.width, canvas.height);
+    let image_data_url = canvas.toDataURL("image/jpeg");
+    document.querySelector("#img").value=image_data_url;
+    document.querySelector("#vehicle").submit();
+    // data url of the image
+    console.log(image_data_url);
+  }
+</script>
+{% endif %}
+{%endblock%}

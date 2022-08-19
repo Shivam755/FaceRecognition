@@ -1,3 +1,20 @@
-{% extends "project/layout.html" %} {% block body%}
-<h1>hello world</h1>
-{% endblock %}
+{% extends "project/layout.html" %}{% block body%}
+<div class="container">
+  <div class="tablet_frame">
+    <a
+      class="button button1"
+      href={% url 'detect' %}
+    >
+      <bold>Take Picture</bold>
+    </a>
+    <button class="button button2"><bold>Show Attendance</bold></button>
+    <div class="phone_frame">
+      <span
+        >It's not the size of the window, but the size of your imagination; and
+        where the journey begins....</span
+      >
+      <p><i>- me..</i></p>
+    </div>
+  </div>
+</div>
+{% endblock%}
