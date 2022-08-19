@@ -68,7 +68,7 @@ header{
    body{
     color: black;
     font-size:14px;
-    height: 100vh;  
+    height: auto;  
     background-image: url('https://images.unsplash.com/photo-1616272963049-da2d8efc0c57?crop=entropy&cs=srgb&fm=jpg&ixid=MnwxNDU4OXwwfDF8cmFuZG9tfHx8fHx8fHx8MTYxNjg3NjU5Mw&ixlib=rb-1.2.1&q=85');
     background-position:center;
     background-size:cover;
@@ -83,8 +83,8 @@ header{
   }
   .tablet_frame{
     max-width: 100%;
-    width: 1024px;
-    height: 690px;
+    width: 100%;
+    height: auto;
     max-height: 100%;
     background-image: url('https://am3pap002files.storage.live.com/y4mLE0nUWxqi7XVzinyS_wYbnz6zEAEpB4OMQ9pfGsFjAFm2OHycJOhfxUYcWn9RUjmsFbb2LJoZjrzXsaE5dHrsMQtEys77lBWFcRCC7BQFihF1em83bns7u6jLM5IyoK9xP6y23F68EzAcFpXV_n4tonB58jtdjCfmBpfMObKJurS03r4bg7MWQEodY_85Fex?width=1024&height=690&cropmode=none');
     background-repeat: no-repeat;
@@ -94,7 +94,7 @@ header{
   }
   .phone_frame{
     width: 600px;
-    height: 600px;
+    height: auto;
     max-width: 100%;
     max-height: 100%;  
     background-image: url('https://am3pap002files.storage.live.com/y4m5tKkWy33SdHxxd0Bb1GvIod3W7RAkSEMW10zIykSRUvoKT-3jgiRfmtsxG9AdjzFOy_QKBbiiN-eESDGTz_GDXYC9Jma6ocQ4JG00o4Yl5C5_2ptvLj3juYHtHp7FJoa8Lm_29yCTWp4Y7B-xbb1oOGLEAn33GT_Sh-y0LoNHW6VxcsJejQIggFaIlyfg5ZM?width=600&height=600&cropmode=none');  
