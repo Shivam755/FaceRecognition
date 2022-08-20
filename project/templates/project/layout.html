@@ -1,14 +1,49 @@
 {% load static %}
 
-<!DOCTYPE html>
-<html lang="en">
+<html>
   <head>
-    <title>{% block title %}Face recognition{% endblock %}</title>
+    <title>Face Recognition</title>
     <link rel="stylesheet" href="{% static 'project/styles.css' %}" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   </head>
+  <header>
+    <h1 class="logo">Attendance Management using Face Recognition</h1>
+  </header>
   <body>
-    <h1>Django project</h1>
-    <div>{% block body %}{% endblock %}</div>
+    <div>
+      <svg
+        class="waves"
+        xmlns="http://www.w3.org/2000/svg"
+        xmlns:xlink="http://www.w3.org/1999/xlink"
+        viewBox="0 24 150 28"
+        preserveAspectRatio="none"
+        shape-rendering="auto"
+      >
+        <defs>
+          <path
+            id="gentle-wave"
+            d="M-160 44c30 0 58-18 88-18s 58 18 88 18 58-18 88-18 58 18 88 18 v44h-352z"
+          />
+        </defs>
+        <g class="parallax">
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="0"
+            fill="rgba(140,255,140,0.7"
+          />
+          <use
+            xlink:href="#gentle-wave"
+            x="48"
+            y="3"
+            fill="rgba(140,255,140,0.5)"
+          />
+          <use xlink:href="#gentle-wave" x="48" y="5" fill="lightgreen" />
+          <use xlink:href="#gentle-wave" x="48" y="7" fill="green" />
+        </g>
+      </svg>
+    </div>
+    {%block body%}{%endblock%}
+    </div>
   </body>
 </html>
