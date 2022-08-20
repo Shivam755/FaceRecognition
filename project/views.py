@@ -7,6 +7,7 @@ from PIL import Image
 import base64
 import secrets
 import io
+from .models import StudentModel, AttendanceModel
 
 
 # Create your views here.
@@ -40,14 +41,30 @@ def cam(request):
             fout.write(chunk)
             fout.close()
 
+        res = faceRec.recongnizeImg(filename)
         # recognising the face in image
-        print(faceRec.recongnizeImg(filename))
+        if res is not None:
+            student = StudentModel.objects.get(rollNum=res)
+            att = AttendanceModel(student=student)
+            att.save()
+            os.remove(filename)
+
+            return render(request, "project/webCam.html", {
+                "success": True,
+                "message": f"Attendance was marked for {res}"
+            })
 
         # deleting file after processing
-        os.remove(filename)
         return render(request, "project/webCam.html", {
             "success": False,
-            "message": ""
+            "message": "No registered user was found"
         })
 
     return render(request, "project/webCam.html")
+
+
+def records(request):
+    recordsList = AttendanceModel.objects.all()
+    return render(request, "project/attendanceTable.html", {
+        "data": recordsList
+    })

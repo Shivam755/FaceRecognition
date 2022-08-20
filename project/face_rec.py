@@ -23,20 +23,26 @@ class FaceRec:
 
     def getImageEnc(self, img_path):
         img = self.read_img(img_path)
-        img_enc = face_recognition.face_encodings(img)[0]
-        return img_enc
+        img_enc_list = face_recognition.face_encodings(img)
+        if len(img_enc_list) > 0:
+            img_enc = img_enc_list[0]
+            return img_enc
+
+        return None
 
     def createImageEnc(self):
         for file in os.listdir(self.known_dir):
             img_enc = self.getImageEnc(self.known_dir+'/'+file)
             self.known_encodings.append(img_enc)
             self.known_names.append(file.split('.')[0])
-            print(self.known_encodings)
-            print(self.known_names)
 
     def recongnizeImg(self, img):
         img_enc = self.getImageEnc(img)
-        results = face_recognition.compare_faces(self.known_encodings, img_enc)
-        for i in range(len(results)):
-            if results[i]:
-                return self.known_names[i]
+        if img_enc is not None:
+            results = face_recognition.compare_faces(
+                self.known_encodings, img_enc)
+            for i in range(len(results)):
+                if results[i]:
+                    return self.known_names[i]
+
+        return None

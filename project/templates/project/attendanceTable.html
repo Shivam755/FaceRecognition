@@ -1,0 +1,18 @@
+{% extends "project/layout.html" %}{% block body%}
+<div class="container">
+  <table class="tableClass">
+    <tr class="headingClass">
+      <th class="column">Roll No.</th>
+      <th class="column">Name</th>
+      <th class="column">Date, Time</th>
+    </tr>
+    {%for record in data%}
+    <tr class="dataRows">
+      <td class="column">{{record.student.rollNum}}</td>
+      <td class="column">{{record.student.name}}</td>
+      <td class="column">{{record.datetime}}</td>
+    </tr>
+    {%endfor%}
+  </table>
+</div>
+{% endblock%}

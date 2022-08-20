@@ -146,6 +146,7 @@ body {
   color: #ff304f;
   box-shadow: 0.2vw 0.2vw 0.8vw 0.2vw #fdc6ce;
   background-color: #fdc6ce;
+  font-size: 2rem;
 }
 
 .success {
@@ -155,4 +156,29 @@ body {
   color: #00c000;
   box-shadow: 0.2vw 0.2vw 0.8vw 0.2vw #bcf5a6;
   background-color: #bcf5a6;
+  font-size: 5rem;
+}
+.headingClass {
+  text-align: center;
+  text-decoration: solid;
+  background-color: #00c000;
+}
+.tableClass {
+  background-color: #4caf50;
+  border-radius: 10px;
+  border-style: solid;
+  border-color: aqua;
+  font-size: 2rem;
+  /* padding: 0.5rem; */
+  opacity: 0.7;
+}
+.dataRows:nth-child(even) {
+  background-color: #71ce74;
+}
+.dataRows {
+  padding: 5px;
+  border-radius: 10px;
+}
+.column {
+  padding: 0.5rem 1rem;
 }

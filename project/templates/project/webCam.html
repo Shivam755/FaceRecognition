@@ -2,6 +2,12 @@
 {% if message %}
   {% if success%}
     <div class="success">{{message}}</div>
+    <a
+      class="button button1"
+      href={% url 'detect' %}
+    >
+      <bold>Take next</bold>
+    </a>
   {% else %}
     <div class="error">{{message}}</div>
   {% endif %}
